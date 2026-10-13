@@ -293,7 +293,13 @@ function Contact() {
         <div className="md:col-span-6">
           <Label n="05">Contact</Label>
           <h2 className="display-lg mt-6">Have a project<br />or idea in <span className="text-signal">mind?</span></h2>
-          <a href={`mailto:${profile.email}`} className="font-display mt-10 inline-flex items-center gap-2 text-2xl underline decoration-line underline-offset-8 hover:decoration-signal">{profile.email}<ArrowUpRight /></a>
+          <a
+  href={`mailto:${profile.email}`}
+  className="font-display mt-10 inline-flex max-w-full items-center gap-2 text-base sm:text-lg md:text-2xl underline decoration-line underline-offset-8 hover:decoration-signal break-all"
+>
+  <span>{profile.email}</span>
+  <ArrowUpRight className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
+</a>
         </div>
         <form className="space-y-6 md:col-span-5 md:col-start-8" onSubmit={(e) => {
           e.preventDefault(); const f = new FormData(e.currentTarget);
